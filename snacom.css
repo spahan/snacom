@@ -1,0 +1,45 @@
+.wrapper { width:1201px; margin:auto;}
+.wrapper > div {
+    margin:10px 0;
+    border: solid medium #555555;
+    border-radius: 10px;
+    padding:10px;
+    background-color:#9999AA;
+}
+
+.header { text-align: center; }
+.header div { padding: 2px 0; }
+.footer { font-size: x-small; }
+
+#top10 { position:relative; width:100%; overflow:hidden;}
+#top10 > div { float:left; font-size:small; margin-right:10px; }
+
+.content { position:relative; }
+.content #login { font-size:small; }
+
+.userinfo { position:relative; font-size:small; height:1em;}
+.userinfo > div { width:19%; float:left; }
+.userinfo span { font-weight:bold; }
+.userinfo > div:last-of-type { float:right; width:auto; }
+.userinfo > div:last-of-type > a { padding-right:5px; }
+.userinfo form { position:relative; top: -0.5em; float:right;}
+
+.fieldlist {font-size:small; width:30%; float:left;}
+.fieldlist > div {text-align:center; font-weight:bold;}
+.fieldlist > ol { margin-bottom:0px; margin-top:5px;}
+.fieldlist li > span:first-child {font-weight:bold; padding-right:5px;}
+
+.scrollbar { overflow-y:scroll; overflow-x:visible; height:400px; clear:both;}
+#field { border-collapse:collapse; border-spacing:0; line-height:11px;}
+#field tr { margin:0; padding:0; }
+#field td { width:20px; height:20px; margin:0; padding:0; overflow:hidden;}
+
+#social { text-align: center; position:relative; height:20px;}
+#social > div { position: relative; float:left; overflow:hidden; max-width:20%;}
+#social .fb {-1px; margin-left:10px;}
+#social .twitter {}
+#social .flattr { margin-left:20px; }
+#social .google { margin-left:20px; }
+
+
+#faq div { font-weight:bold; }
