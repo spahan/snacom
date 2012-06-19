@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+require_once('snacom/config.php');
 /* log out user */
 session_start();
 if (@$_SESSION['uid']) {

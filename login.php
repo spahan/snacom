@@ -1,6 +1,6 @@
 <?php
 
-require_once('config.php');
+require_once('snacom/config.php');
 
 // param check
 $uid = strtolower(filter_input(INPUT_POST, 'uid', FILTER_VALIDATE_REGEXP, $VALID_USER_FILTER));

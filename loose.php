@@ -1,5 +1,5 @@
 <?php 
-require_once('config.php'); 
+require_once('snacom/config.php'); 
 session_start();
 echo HTML_PAGE_START;
 ?>

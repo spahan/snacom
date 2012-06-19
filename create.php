@@ -1,6 +1,6 @@
 <?php
 
-require_once('config.php');
+require_once('snacom/config.php');
 $uid = strtolower(filter_input(INPUT_POST, 'uid', FILTER_VALIDATE_REGEXP, $VALID_USER_FILTER));
 if (!$uid) { header('HTTP/1.1 400 Bad Request'); die(); }
 

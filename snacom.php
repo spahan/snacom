@@ -1,6 +1,6 @@
 <?php
-require_once('config.php');
-require_once('functions.php');
+require_once('snacom/config.php');
+require_once('snacom/functions.php');
 // check user
 session_start();
 if (isset($_SESSION['uid'])) {
