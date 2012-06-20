@@ -24,6 +24,9 @@
 .userinfo > div:last-of-type > a { padding-right:5px; }
 .userinfo form { position:relative; top: -0.5em; float:right;}
 
+.userdata { font-size:small;}
+.userdata th { width:33%; text-align:left };
+
 .fieldlist {font-size:small; width:30%; float:left;}
 .fieldlist > div {text-align:center; font-weight:bold;}
 .fieldlist > ol { margin-bottom:0px; margin-top:5px;}

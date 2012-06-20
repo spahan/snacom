@@ -70,15 +70,20 @@ function makeClientLine($line, $j) {
 
 // transform field data to html to show to user.
 function makeViewLine($line) {
-    $f = '<td><img src="%s"/></td>';
-    $result = '<tr>';
+    $f = '<td><img src="img/%s"/></td>';
+    $result = "\n\n<tr>";
     for ($i=0;$i< FIELD_WIDTH; $i++) {
-        if ($line{$i*3} == 'O') {
-            $result .= sprintf($f, 'open' . $line{$i*3+1} . '.png');
-        } elseif ($line{$i*3} == 'C' ) {
-            $result .= sprintf($f, ( $line{$i*3+2} == '1' ) ? 'flagged.png' : 'closed.png');
-        } else { // == 'M'
-            $result .= sprintf($f, ( $line{$i*3+2} == '1' ) ? 'goodflag.png' : 'badflag.png');
+		switch ($line{$i*3}) {
+			case 'O':
+            	$result .= sprintf($f, 'open' . $line{$i*3+1} . '.png'); break;
+			case 'C':
+            	$result .= sprintf($f, ( $line{$i*3+2} == '1' ) ? 'badflag.png' : 'closed.png'); break;
+			case 'M':
+            	$result .= sprintf($f, ( $line{$i*3+2} == '1' ) ? 'goodflag.png' : 'closed.png'); break;
+			case 'B':
+				$result .= sprintf($f, 'boom.png'); break;
+			default:
+				error_log("WARNING: illegal field state in game!");
         }
     }
     $result .= '</tr>';

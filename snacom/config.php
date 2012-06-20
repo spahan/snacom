@@ -37,5 +37,4 @@ Welcome <span>guest player</span>. To participate in the top10 and review past g
 
 $VALID_USER_FILTER = array('options' => array('regexp' => '/[a-zA-Z]{4}[a-zA-Z0-9]{0,12}/'));
 $VALID_HASH_FILTER = array('options' => array('regexp' => '/[a-f0-9]{32}/'));
-$VALID_FIELD_FILTER = array('options' => array('regexp' => '/[a-zA-Z]{4}[a-zA-Z0-9]{0,12}#\d*/'));
 ?>
