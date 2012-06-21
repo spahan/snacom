@@ -13,6 +13,10 @@ $hash = filter_input(INPUT_POST, 'hash', FILTER_VALIDATE_REGEXP, $VALID_HASH_FIL
 if (!$hash) { header('HTTP/1.1 400 Bad Request'); die(); }
 
 session_start();
+// save old field data in case we want keep them.
+if (isset($_SESSION['gid'])) {
+	$guest = json_decode(file_get_contents(USER_DATA_DIR . $_SESSION['gid']), true);
+}
 $_SESSION = array();
 session_destroy(); // destroy any old sessions.
 
@@ -62,6 +66,11 @@ if (!$user) {
 if ($hash === md5( $salt . $user['password'] . $salt)) {
     session_start();
     $user['sid'] = session_id();
+	if (isset($guest['field'])) {
+		if (count($guest['field']) >= count($user['field'])) {
+			$user['field'] = $guest['field'];
+		}
+	}
     $_SESSION['uid'] = $uid;
     file_put_contents(USER_DATA_DIR . $uid, json_encode($user));
     header('location: /');
