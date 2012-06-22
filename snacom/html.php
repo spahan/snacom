@@ -58,7 +58,7 @@ function html_player($player) {
 <div>your highest score is <span><?php echo (count($player['top10']) > 0)? $player['top10'][0]['score']:0?></span></div>
 <div>the current score is <span id="score"><?php echo count($player['field'])?></span></div>
 <div>you have wrecked <span><?php echo $player['games_played']?></span> ships</div>
-<div><a href="logout.php">logout</a> <a href="view.html">your games</a></div>
+<div><a href="logout.php">logout</a> <a href="view.php">your games</a></div>
 </div>
 <?php
 }
