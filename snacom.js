@@ -23,7 +23,10 @@ function openField(data) {
     if (data.r < 0) document.location = "/loose.php";
     else {
         this.firstChild.src="img/open" + data.r + ".png";
-        if (data.n) $(this.parentNode.parentNode).append(data.n);
+        if (data.n) { 
+			$(this.parentNode.parentNode).append(data.n);
+			$('#score')[0].innerHTML = Number($('#score')[0].innerHTML) + 1;
+		}
         if (data.r == 0) openNeighbours(this, this.getAttribute('x'));
     }
 }
