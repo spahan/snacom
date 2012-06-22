@@ -81,7 +81,7 @@ Welcome <span>guest player</span>. To participate in the top10 and review past g
 function html_create($uid) {
 ?>
 <div class="userinfo">
-	<form method="POST" action="create.php" onsubmit="this.hash.value = hex_md5(<?php echo APP_SALT;?> + this.hash.value + <?php echo APP_SALT;?>);" class="userinfo" accept-charset=utf-8>
+	<form method="POST" action="create.php" onsubmit="return this.hash.value = hex_md5(<?php echo APP_SALT;?> + this.hash.value + <?php echo APP_SALT;?>);" class="userinfo" accept-charset=utf-8>
 		<input name="uid" type="text" size="15" title="Your name must be 6-20 chars long and can only contain a-z and 0-9" placeholder="username" value="<?php echo $uid;?>"/>
 		<input name="hash" type="password" size="30" title="Your password must be 8-100 chars long; use special characters at own risk; some chars are forbidden" placeholder="password"/>
 		<input type="hidden" name="salt" value=""/>

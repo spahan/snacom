@@ -11,6 +11,7 @@ if (file_exists(USER_DATA_DIR . $uid)) {
     header('HTTP/1.1 403 Forbidden');
     die('user already exists');
 }
+// delete previous session data if any.
 session_start();
 $_SESSION = array();
 session_destroy();
@@ -23,7 +24,7 @@ $user = array(  'userID' => $uid, // hte users id, just in case.
                 'favorites' => array(), // favorites for this user
                 'password' => $hash, // md5(APP_SALT . pw . APP_SALT
                 'games_played'  => 0, // game count
-                'sid' => session_id()); // current session id or null if logged out.
+                'sid' => session_id()); // current session id
 
 file_put_contents(USER_DATA_DIR . $uid, json_encode($user));
 $_SESSION['uid'] = $uid;
