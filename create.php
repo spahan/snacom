@@ -1,6 +1,8 @@
 <?php
 
 require_once('snacom/config.php');
+require_once('snacom/recaptchalib.php');
+
 $uid = strtolower(filter_input(INPUT_POST, 'uid', FILTER_VALIDATE_REGEXP, $VALID_USER_FILTER));
 if (!$uid) { header('HTTP/1.1 400 Bad Request'); die(); }
 
@@ -11,6 +13,9 @@ if (file_exists(USER_DATA_DIR . $uid)) {
     header('HTTP/1.1 403 Forbidden');
     die('user already exists');
 }
+$rcr = recaptcha_check_answer( RC_SERVER_KEY, $_SERVER['REMOTE_ADDR'], $_POST['recaptcha_challenge_field'], $_POST['recaptcha_response_field']);
+if(!$rcr->is_valid) 
+	die('The reCAPTCHA wasn\'t entered correctly. Go back and try it again. (reCAPTCHA said: ' . $rcr->error . ')');
 // delete previous session data if any.
 session_start();
 $_SESSION = array();

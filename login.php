@@ -49,7 +49,7 @@ if ($user) {
 		'md5.js' => true,
 		'jquery.js' => false,
 		'snacom.js' => true));
-	html_title("No user $uid found. You may create it");
+	html_title("No user <span style=\"font-weight:bold\">$uid</span> found. You may create it");
 	html_create($uid);
 	html_foot();
 }

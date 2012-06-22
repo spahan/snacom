@@ -88,14 +88,26 @@ Welcome <span>guest player</span>. To participate in the top10 and review past g
 
 function html_create($uid) {
 ?>
-<div class="userinfo">
-	<form method="POST" action="create.php" onsubmit="return this.hash.value = hex_md5(<?php echo APP_SALT;?> + this.hash.value + <?php echo APP_SALT;?>);" class="userinfo" accept-charset=utf-8>
-		<input name="uid" type="text" size="15" title="Your name must be 6-20 chars long and can only contain a-z and 0-9" placeholder="username" value="<?php echo $uid;?>"/>
-		<input name="hash" type="password" size="30" title="Your password must be 8-100 chars long; use special characters at own risk; some chars are forbidden" placeholder="password"/>
+<div class="usercreate">
+	<form method="POST" action="create.php" onsubmit="return this.hash.value = hex_md5(<?php echo APP_SALT;?> + this.hash.value + <?php echo APP_SALT;?>);" accept-charset=utf-8>
+		<div style="float:right">
+        <?php
+            require_once('snacom/recaptchalib.php');
+            echo recaptcha_get_html(RC_CLIENT_KEY);
+        ?>
+        </div>
+		<div title="Your name must be 6-20 chars long and can only contain a-z and 0-9">
+			<input name="uid" type="text" size="15" placeholder="username" value="<?php echo $uid;?>"/>
+			please choose a creative <span style="font-weight:bold">username</span>
+		</div>
+		<div title="Your password must be 8-100 chars long; use special characters at own risk; some chars are forbidden">
+			<input name="hash" type="password" size="30" placeholder="password"/>
+			do not reuse important<span style="font-weight:bold">passwords</span>
+		</div>
 		<input type="hidden" name="salt" value=""/>
 		<input type="submit" name="send" value="createAccount"/>
 	</form>
-	<div style="font-size:small;width:auto; float:left;">For details about how user data is handled please refere to the <a href="faq.php">FAQ</a>.</div>
+	<div style="clear:both">For details about how user data is handled please refere to the <a href="faq.php">FAQ</a>.</div>
 </div>
 <?php
 }

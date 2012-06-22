@@ -23,7 +23,10 @@
 .userinfo form { position:relative; top: -0.5em; float:right;}
 
 .userdata { font-size:small;}
-.userdata th { width:33%; text-align:left };
+.userdata th { width:33%; text-align:left }
+
+.usercreate { font-size:small; }
+.usercreate form div {padding-bottom:3px;}
 
 .fieldlist {font-size:small; width:30%; float:left;}
 .fieldlist > div {text-align:center; font-weight:bold;}
