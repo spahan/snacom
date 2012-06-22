@@ -1,6 +1,8 @@
 User-agent: *
 Disallow: /snacom.php
 Disallow: /login.php
+Disallow: /logout.php
+Disallow: /create.php
 Allow: /
 
 
