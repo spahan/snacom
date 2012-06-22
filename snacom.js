@@ -1,22 +1,25 @@
+function openNear(item) {
+	var p = null;
+	item.onclick();
+	if ( p = item.previousSibling) { p.onclick(); }
+	if ( p = item.nextSibling) { p.onclick(); }
+}
 // open fields around item (x is the vertical position)
 function openNeighbours(item) {
-    var p = null, l=null, f=null, x = item.getAttribute('x');
+    var p = null, l = null, x = item.getAttribute('x');
     if ( p = item.previousSibling) { p.onclick(); }
     if ( p = item.nextSibling) { p.onclick(); }
     // open above if has a line
     if (l = item.parentNode.previousSibling ) {
-        f = l.childNodes[x]; 
-        f.onclick();
-        if ( p = f.previousSibling) { p.onclick(); }
-        if ( p = f.nextSibling) { p.onclick(); }
-    }
+		openNear(l.childNodes[x]);
+	} // else is top line. nothing to open
     // open below if has line.
     if (l = item.parentNode.nextSibling) {
-        var f = l.childNodes[x];
-        f.onclick();
-        if ( p = f.previousSibling) { p.onclick(); }
-        if ( p = f.nextSibling) { p.onclick(); }
-    }
+		openNear(l.childNodes[x]);
+    } else {
+		// we dont have a line below. it should be here soon. so delay a little and try again
+		setTimeout(function () { if (l=item.parentNode.nextSibling) openNear(l.childNodes[x]); }, 500);
+	}
 }
 // open field using server answer.
 function openField(data) {
