@@ -1,0 +1,20 @@
+Snatch Commander
+----------------
+
+Snatch Commander is a online minesweeper game.
+Similar to the offline games, you have to figure out where mines are located.
+While opening fields without mines, you get new areas to advance.
+
+Get as far as you can at http://snacom.spahan.ch
+--
+
+The game itself requires a webserver with php.
+Persisten user data is stored in as json in plain files, so no Database is required.
+
+
+--
+
+As casual games like this invites users to reuse very easy passwords, the game makes 
+sure the real password is never transmitted. Only hashes are sent over the network, 
+and expect for the registration those are one time hashes (so users can play in unsafe
+networks. at most their current game is in trouble).
