@@ -45,9 +45,6 @@ function toggleFlag(item) {
     if (item.firstChild.src.match(/open\d\.png/)) return;
     $.get('snacom.php', { x: item.getAttribute('x'), y: item.getAttribute('y'), f: (item.firstChild.src.match(/flagged\.png/))?0:1});
     item.firstChild.src = (item.firstChild.src.match(/flagged\.png/))? "img/closed.png":"img/flagged.png";
-	if (event.preventDefault)
-		event.preventDefault();
-	event.cancelBubble = true;
 	return false;
 }
 
