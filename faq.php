@@ -1,11 +1,12 @@
 <?php 
 require_once('snacom/config.php'); 
+require_once('snacom/html.php');
 session_start();
-echo HTML_PAGE_START;
+
+html_head(array('jquery.js' => false));
+html_title('<div style="font-weight:bolder;">frequently answered questions</div>');
 ?>
-    </div>
     <div class="content">
-        <div style="font-weight:bolder;">frequently answered questions</div>
         <ul id="faq">
             <li>
                 <div>General</div>
@@ -52,5 +53,5 @@ echo HTML_PAGE_START;
         </ul>
     </div>
 <?php
-echo HTML_PAGE_END;
+html_foot();
 ?>

@@ -1,29 +1,32 @@
 <?php
 require_once('snacom/config.php');
 require_once('snacom/functions.php');
+require_once('snacom/html.php');
 session_start();
 
-echo HTML_PAGE_START;
+html_head(array('jquery.js' => false));
 echo '<div id="top10"><?php echo "top10"; ?></div></div>';
 $uid = strtolower(filter_input(INPUT_GET, 'u', FILTER_VALIDATE_REGEXP, $VALID_USER_FILTER));
 if (!$uid) {
     if (isset($_SESSION['uid'])) {
         $uid = $_SESSION['uid'];
     } else {
-        echo '<div style="font-weight:bolder">You need be logged in to see your games</div></div>';
-        die(HTML_PAGE_END);
+		html_title('<div style="font-weight:bolder">You need be logged in to see your games</div></div>');
+		html_foot();
+        die();
     }
 }
 // display the users data.
 // not thread safe! as we only read, we ignore this here.
 $user = json_decode(@file_get_contents(USER_DATA_DIR . $uid), true);
 if (!$user) {
-    echo '<div style="font-weight:bolder">No such user</div></div>';
-    die(HTML_PAGE_END);
+	html_title('<div style="font-weight:bolder">No such user</div></div>');
+	html_foot();
+	die();
 }
 
-echo "<div class=\"userdata\"><div>Games of $uid</div><table width=\"100%\">";
-echo "<tr><th>top10</th><th>recent</th><th>favs</th></th>";
+html_title('Games of <span style="font-weight:bolder">' . $uid . '</span>');
+echo '<div class="userdata"><table width="100%"><table width="100%"><tr><th>top10</th><th>recent</th><th>favs</th></th>';
 $game_data_format = '<td><a href="view.php?u=%s&g=%s">%s</a>%s</td>';
 for ($i = 0; $i < 10; $i++) {
 	echo '<tr>';
@@ -64,5 +67,5 @@ if ($gameID) {
 	}
 	echo '</table></div>';
 }
-echo HTML_PAGE_END;
+html_foot();
 ?>
