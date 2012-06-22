@@ -5,7 +5,7 @@ require_once('snacom/functions.php');
 session_start();
 if (@$_SESSION['uid']) {
 	$user = getUserData($_SESSION['uid']);
-	if (@$user['sid' === session_id()) {
+	if (@$user['sid'] === session_id()) {
 		$user['sid'] = null;
 		file_put_contents(USER_DATA_DIR . $_SESSION['uid'], json_encode($user));
 	}
