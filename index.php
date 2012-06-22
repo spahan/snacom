@@ -20,6 +20,9 @@ EOT
 if (isset($_SESSION['uid'])) {
 	$uid = $_SESSION['uid'];
 	$user = getUserData($_SESSION['uid']);
+	if (!$user) {
+		die('bad session');
+	}
 	if ($user['sid'] === session_id()) {
 		// check if the user has a field. if not create one.
 		if (count($user['field']) === 0) {

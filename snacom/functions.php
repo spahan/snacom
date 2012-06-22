@@ -93,8 +93,9 @@ function makeViewLine($line) {
 // open and lock user data.
 function getUserData($uid) {
     global $fp;
-    $fp = fopen(USER_DATA_DIR . $uid, 'r+') or die('can not open user data');
-    $lock = flock($fp, LOCK_EX) or die('can not lock user data');
+    $fp = fopen(USER_DATA_DIR . $uid, 'r+');
+	if (!$fp) return false;
+    if (!flock($fp, LOCK_EX)) return false;
     // as we use a lock now, we want close it cleanly on shutdown.
     function closeAndExit() {global $fp;flock($fp, LOCK_UN); fclose($fp);}
     register_shutdown_function('closeAndExit');
