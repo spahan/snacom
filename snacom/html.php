@@ -27,13 +27,18 @@ function html_title($text) {
 		</div>
 		<div class="header">
 			<div class="head">
-				<a href="/">
-					<img src="img/head.png"/>
-				</a>
+				<a href="/"><img src="img/head.png"/></a>
 			</div>
-			<div class="welcome">
+			<div class="welcome"><?php echo $text;?></div>
+			<div class="top10">
 <?php
-	echo $text . '</div></div>';
+	$top = json_decode(file_get_contents('top10.json'), true);
+	echo '<span classs="total_ships">' . $top[0]['ships_wrecked'] . ' ships wrecked so far </span>';
+	$top_format = '<span>%1$s<a href="view.php?%2$s">%2$s</a>(%3$s)</span>';
+	for ($i=1; $i < count($top); $i++) {
+		printf($top_format, $i, $top[$i]['uid'], $top[$i]['score']);
+	}
+	echo '</div></div>';
 }
 
 function html_foot() {
