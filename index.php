@@ -8,7 +8,7 @@ html_head(array(
 	'http://api.flattr.com/js/0.6/load.js?mode=auto' => true,
 	'md5.js' => true,
 	'jquery.js' => false,
-	'snacom.js' => true));
+	'snacom.js' => false));
 html_title(<<<EOT
 <div style="font-weight:bolder;">Welcome to Snatch Commander.</div>
 <div>Some low level criminals have pestered the sea with mines. Your order is to safely guard a UN-medical convoy to innocent war victims.</div>
