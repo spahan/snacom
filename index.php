@@ -35,7 +35,6 @@ if (isset($_SESSION['uid'])) {
 		echo '<div>BUG! report to <a href="mailto://snacom.spahan.ch">admin</a></div>';
 	}
 } else {
-	html_login();
 	// is a guest. setup guest session (or restore old one if still existent)
 	if (!isset($_SESSION['gid']) || !file_exists(USER_DATA_DIR . $_SESSION['gid'])) {
 		$i = 1;
@@ -49,6 +48,7 @@ if (isset($_SESSION['uid'])) {
 	if (count($user['field']) === 0) {
 		makeField($user['field']);
 	}
+	html_login();
 }
 ?>
 <div class="content scrollbar">
@@ -64,7 +64,7 @@ html_social();
 html_foot();
 ?>
 <script> $(function() {
-	$('tr:first-child td:first-child')[0].onclick();
-	$('tr:first-child td:last-child')[0].onclick();
+	$('tr:first-child td:first-child')[0].firstChild.onclick();
+	$('tr:first-child td:last-child')[0].firstChild.onclick();
 });
 </script>

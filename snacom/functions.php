@@ -53,7 +53,7 @@ function makeField(&$field) {
 // transfroms a given line to the client side representation.
 // j is the line number.
 function makeClientLine($line, $j) {
-    $f = '<td onclick="checkField(this)" oncontextmenu="toggleFlag(this); return false" x="%d" y="%d"><img src="img/%s"/></td>';
+    $f = '<td x="%d" y="%d"><img src="img/%s" onclick="checkField(this.parentNode)" oncontextmenu="return toggleFlag(this.parentNode)"/></td>';
     $result = '<tr>';
     for ($i=0;$i< FIELD_WIDTH; $i++) {
         if ($line{$i*3} == 'O') {

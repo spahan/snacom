@@ -71,17 +71,17 @@ function html_player($player) {
 <?php
 }
 
-function html_login() {
+function html_login($data) {
 ?>
 <div class="userinfo">
 	<form method="POST" action="login.php" onSubmit="return this.hash.value = hex_md5(this.salt.value + hex_md5(<?php echo APP_SALT?> + this.hash.value + <?php echo APP_SALT?>) + this.salt.value);" accept-charset="utf-8";>
     	<input name="uid" type="text" size="10" title="Your name must be 6-20 chars long and can only contain a-z and 0-9" placeholder="username"/>
-    	<input name="hash" type="password" size="17" title="Your password must be 8-100 chars long; use special characters at own risk; some chars are forbidden" placeholder="password"/>
+    	<input name="hash" type="password" size="10" title="Your password must be 8-100 chars long; use special characters at own risk; some chars are forbidden" placeholder="password"/>
     	<input type="hidden" name="salt" value=""/>
     	<script>$("input[name=\'salt\']")[0].value = Math.ceil(Math.random()*50000);</script>
     	<input type="submit" name="send" value="login/createAccount"/>
 	</form>
-Welcome <span>guest player</span>. To participate in the top10 and review past games, please log in or create a account
+Welcome <span>guest player</span>. current score <span id="score"><?php echo count($data['field']); ?></span>. To participate in the top10 and review past games, please log in or create a account
 </div>
 <?php
 }

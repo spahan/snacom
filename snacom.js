@@ -1,14 +1,14 @@
 function openNear(item) {
 	var p = null;
-	item.onclick();
-	if ( p = item.previousSibling) { p.onclick(); }
-	if ( p = item.nextSibling) { p.onclick(); }
+	item.firstChild.onclick();
+	if ( p = item.previousSibling) { p.firstChild.onclick(); }
+	if ( p = item.nextSibling) { p.firstChild.onclick(); }
 }
 // open fields around item (x is the vertical position)
 function openNeighbours(item) {
     var p = null, l = null, x = item.getAttribute('x');
-    if ( p = item.previousSibling) { p.onclick(); }
-    if ( p = item.nextSibling) { p.onclick(); }
+    if ( p = item.previousSibling) { p.firstChild.onclick(); }
+    if ( p = item.nextSibling) { p.firstChild.onclick(); }
     // open above if has a line
     if (l = item.parentNode.previousSibling ) {
 		openNear(l.childNodes[x]);
@@ -45,5 +45,9 @@ function toggleFlag(item) {
     if (item.firstChild.src.match(/open\d\.png/)) return;
     $.get('snacom.php', { x: item.getAttribute('x'), y: item.getAttribute('y'), f: (item.firstChild.src.match(/flagged\.png/))?0:1});
     item.firstChild.src = (item.firstChild.src.match(/flagged\.png/))? "img/closed.png":"img/flagged.png";
+	if (event.preventDefault)
+		event.preventDefault();
+	event.cancelBubble = true;
+	return false;
 }
 
