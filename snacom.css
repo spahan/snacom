@@ -11,8 +11,8 @@
 .header div { padding: 2px 0; }
 .footer { font-size: x-small; }
 
-#top10 { position:relative; width:100%; overflow:hidden;}
-#top10 > div { float:left; font-size:small; margin-right:10px; }
+.top10 { position:relative; width:100%; overflow:hidden;}
+.top10 > div { float:left; font-size:small; margin-right:10px; }
 
 .content { position:relative; }
 .content #login { font-size:small; }
@@ -20,8 +20,6 @@
 .userinfo { position:relative; font-size:small; height:1em;}
 .userinfo > div { width:19%; float:left; }
 .userinfo span { font-weight:bold; }
-.userinfo > div:last-of-type { float:right; width:auto; }
-.userinfo > div:last-of-type > a { padding-right:5px; }
 .userinfo form { position:relative; top: -0.5em; float:right;}
 
 .userdata { font-size:small;}

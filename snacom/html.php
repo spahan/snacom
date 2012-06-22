@@ -30,11 +30,12 @@ function html_title($text) {
 				<a href="/"><img src="img/head.png"/></a>
 			</div>
 			<div class="welcome"><?php echo $text;?></div>
+			<hr/>
 			<div class="top10">
 <?php
 	$top = json_decode(file_get_contents('top10.json'), true);
-	echo '<span classs="total_ships">' . $top[0]['ships_wrecked'] . ' ships wrecked so far </span>';
-	$top_format = '<span>%1$s<a href="view.php?%2$s">%2$s</a>(%3$s)</span>';
+	echo '<div><span style="font-weight:bold">' . $top[0]['ships_wrecked'] . '</span> ships wrecked so far. Top Players:</div>';
+	$top_format = '<div>%1$s. <a href="view.php?%2$s">%2$s</a> (%3$s)</div>';
 	for ($i=1; $i < count($top); $i++) {
 		printf($top_format, $i, $top[$i]['uid'], $top[$i]['score']);
 	}
@@ -63,7 +64,9 @@ function html_player($player) {
 <div>your highest score is <span><?php echo (count($player['top10']) > 0)? $player['top10'][0]['score']:0?></span></div>
 <div>the current score is <span id="score"><?php echo count($player['field'])?></span></div>
 <div>you have wrecked <span><?php echo $player['games_played']?></span> ships</div>
-<div><a href="logout.php">logout</a> <a href="view.php">your games</a></div>
+<div style="float:right; width:auto;">
+	<a style="padding-right:5px;" href="logout.php">logout</a> <a href="view.php">your games</a>
+</div>
 </div>
 <?php
 }
