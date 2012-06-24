@@ -38,12 +38,12 @@ function checkField(item) {
     if (item.firstChild.src.match(/flagged\.png/)) return;
     if (item.firstChild.src.match(/opening\.png/)) return;
     item.firstChild.src = "img/opening.png";
-    $.ajax('snacom.php', { context: item, data: { x: item.getAttribute('x'), y: item.getAttribute('y') }, success: openField, dataType:'json' });
+    $.ajax('snacom.php', { context: item, data: { x: item.getAttribute('x'), y: item.getAttribute('y'), cgid:$('#field')[0].getAttribute('gid') }, success: openField, dataType:'json' });
 }
 
 function toggleFlag(item) {
     if (item.firstChild.src.match(/open\d\.png/)) return;
-    $.get('snacom.php', { x: item.getAttribute('x'), y: item.getAttribute('y'), f: (item.firstChild.src.match(/flagged\.png/))?0:1});
+    $.get('snacom.php', { x: item.getAttribute('x'), y: item.getAttribute('y'), f: (item.firstChild.src.match(/flagged\.png/))?0:1, cgid:$('#field')[0].getAttribute('gid')});
     item.firstChild.src = (item.firstChild.src.match(/flagged\.png/))? "img/closed.png":"img/flagged.png";
 	return false;
 }

@@ -19,6 +19,9 @@ $x = filter_input(INPUT_GET, 'x', FILTER_VALIDATE_INT, array('options' => array(
 $y = filter_input(INPUT_GET, 'y', FILTER_VALIDATE_INT, array('options' => array('min_range'=>0,'max_range'=>count($user['field'])-3)));
 $f = filter_input(INPUT_GET, 'f', FILTER_VALIDATE_INT, array('options' => array('min_range'=>0,'max_range'=>1)));
 
+$currentGameID = filter_input(INPUT_GET, 'cgid', FILTER_VALIDATE_INT, array('options' => array('min_range'=>0)));
+if ($currentGameID !== $user['currentGameID']) { die('bad game ID'); }
+
 if ((!$x && $x!==0) || (!$y && $y!==0)) {
     header('HTTP/1.1 400 Bad Request');
     die('invalid location data');

@@ -27,6 +27,7 @@ if (isset($_SESSION['uid'])) {
 		// check if the user has a field. if not create one.
 		if (count($user['field']) === 0) {
 			makeField($user['field']);
+			$user['currentGameID'] = rand();
 		}
 		html_player($user);
 	} else {
@@ -47,12 +48,13 @@ if (isset($_SESSION['uid'])) {
 	$user = getUserData($_SESSION['gid']);
 	if (count($user['field']) === 0) {
 		makeField($user['field']);
+		$user['currentGameID'] = rand();
 	}
-	html_login();
+	html_login($user);
 }
 ?>
 <div class="content scrollbar">
-	<table id="field"><?php
+	<table id="field" gid="<?php echo $user['currentGameID']?>"><?php
 		for ($j=0; $j < count($user['field']) - 2; $j++) {
 			echo makeClientLine($user['field'][$j], $j);
 		}
