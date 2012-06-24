@@ -54,7 +54,7 @@ if (isset($_SESSION['uid'])) {
 }
 ?>
 <div class="content scrollbar">
-	<table id="field" gid="<?php echo $user['currentGameID']?>"><?php
+	<table id="field" oncontextmenu="return false;" gid="<?php echo $user['currentGameID']?>"><?php
 		for ($j=0; $j < count($user['field']) - 2; $j++) {
 			echo makeClientLine($user['field'][$j], $j);
 		}
