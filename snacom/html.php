@@ -81,7 +81,7 @@ function html_login($data) {
     	<script>$("input[name=\'salt\']")[0].value = Math.ceil(Math.random()*50000);</script>
     	<input type="submit" name="send" value="login/createAccount"/>
 	</form>
-Welcome <span>guest player</span>. current score <span id="score"><?php echo count($data['field']); ?></span>. To participate in the top10 and review past games, please log in or create a account
+Welcome <span>guest player</span>. score <span id="score"><?php echo count($data['field']); ?></span>. To review games and participate in Top10 create a account:
 </div>
 <?php
 }
