@@ -50,6 +50,21 @@ html_title('<div style="font-weight:bolder;">frequently answered questions</div>
                     <dd>Use your brain! The human brain is capable to do high level logic deduction. If used correctly, it is able to tell where the mines are.</dd>
                 </dl>
             </li>
+			<li>
+				<div>Technical</div>
+				<dl>
+					<dt>I use NoScript. What domains do i need whitelist to play?</dt>
+					<dd>Only snacom.ch is required to play. At registration recaptcha needs google.com</dd>
+					<dt>How can I hide my ass from you?</dt>
+					<dd>But I am sooo nice!!!... Well, just use TOR</dd>
+					<dt>I cracked the highscore, why am i not listed?</dt>
+					<dd>The high score is updated every 5 minutes. Just wait.</dd>
+					<dt>IT does not work nice on smartphones!</dt>
+					<dd>Yes, i am working on that. I am still not sure how to interact nicely on touch-based devices.. Any ideas? Drop me a mail</dd>
+					<dt>My question is not answered here. Where do i ask?</dt>
+					<dd>Drop me a mail at miner@spahan.ch</dd>
+				</dl>
+			</li>
         </ul>
     </div>
 <?php
