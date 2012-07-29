@@ -9,12 +9,5 @@ Get as far as you can at http://snacom.spahan.ch
 --
 
 The game itself requires a webserver with php.
-Persisten user data is stored in as json in plain files, so no Database is required.
+Persisten user data is stored as json in plain files, so no Database is required.
 
-
---
-
-As casual games like this invites users to reuse very easy passwords, the game makes 
-sure the real password is never transmitted. Only hashes are sent over the network, 
-and expect for the registration those are one time hashes (so users can play in unsafe
-networks. at most their current game is in trouble).
