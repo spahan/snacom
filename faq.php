@@ -59,8 +59,10 @@ html_title('<div style="font-weight:bolder;">frequently answered questions</div>
 					<dd>But I am sooo nice!!!... Well, just use <a href="https://www.torproject.org/">Tor</a></dd>
 					<dt>I cracked the highscore, why am i not listed?</dt>
 					<dd>The high score is updated every 5 minutes. Just wait.</dd>
-					<dt>IT does not work nice on smartphones!</dt>
+					<dt>It does not work nice on smartphones!</dt>
 					<dd>Yes, i am working on that. I am still not sure how to interact nicely on touch-based devices.. Any ideas? Drop me a mail</dd>
+					<dt>Can I see the code?</dd>
+					<dd>Yes, check out the <a href="https://github.com/spahan/snacom">github repository</a></dt>
 					<dt>My question is not answered here. Where do i ask?</dt>
 					<dd>Drop me a mail at miner@spahan.ch</dd>
 				</dl>
