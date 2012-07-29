@@ -35,7 +35,7 @@ function html_title($text) {
 <?php
 	$top = json_decode(file_get_contents('top10.json'), true);
 	echo '<div><span style="font-weight:bold">' . $top[0]['ships_wrecked'] . '</span> ships wrecked so far. Top Players:</div>';
-	$top_format = '<div>%1$s. <a href="view.php?%2$s">%2$s</a> (%3$s)</div>';
+	$top_format = '<div>%1$s. <a href="view.php?u=%2$s">%2$s</a> (%3$s)</div>';
 	for ($i=1; $i < count($top); $i++) {
 		printf($top_format, $i, $top[$i]['uid'], $top[$i]['score']);
 	}
