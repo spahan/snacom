@@ -79,7 +79,7 @@ function makeViewLine($line) {
 			case 'C':
             	$result .= sprintf($f, ( $line{$i*3+2} == '1' ) ? 'badflag.png' : 'closed.png'); break;
 			case 'M':
-            	$result .= sprintf($f, ( $line{$i*3+2} == '1' ) ? 'goodflag.png' : 'closed.png'); break;
+            	$result .= sprintf($f, ( $line{$i*3+2} == '1' ) ? 'goodflag.png' : 'mine.png'); break;
 			case 'B':
 				$result .= sprintf($f, 'boom.png'); break;
 			default:
