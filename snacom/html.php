@@ -50,6 +50,10 @@ function html_foot() {
 			jabber:hanfi@jabber.ccc.de
 			<a href="http://blog.spahan.ch">my blog</a>
 			. see <a href="faq.php"> the faq</a> for more infos
+			<!-- flattr -->
+			<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://snacom.ch"></a>
+			<noscript><a href="http://flattr.com/thing/401325/Snatch-Commander" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
+			<!-- end of flattr -->
 		</div>
 	</div>
 </body>
@@ -114,19 +118,27 @@ function html_create($uid) {
 
 function html_social() {
 ?>
-<div class="footer" id="social">
-	<div class="twitter">
-<!-- begin twitter tweet -->
-<a href="http://twitter.com/share" class="twitter-share-button" data-text="Good luck sailor!" data-count="none">Tweet</a><script async="async" type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<!-- end twitter tweet -->
-	</div>
-	<div class="flattr">
-<!-- flattr -->
-<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://snacom.ch"></a>
-<noscript><a href="http://flattr.com/thing/401325/Snatch-Commander" target="_blank">
-<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
-<!-- end of flattr -->
-	</div>
+<div id="social">
+	<script type="text/javascript">
+		$(function() {$('#social').socialSharePrivacy({
+			'txt_help' : 'Enabling a social plugin will send data to the service. Your privacy may be harmed. click the "i" for detail information.',
+			'settings_perma' : 'permanently enable service:',
+			services: {
+				facebook: {
+					'txt_info' : '2 clicks for privacy. Enabling the like button will send data to Facebook',
+					'language' : 'en_US',
+					'action' : 'like'
+				},
+				twitter: {
+					'txt_info' : '2 clicks for privacy. Enabling the tweet button will send data to Twitter'
+				},
+				gplus: {
+					'txt_info' : '2 clicks for privacy. Enable the google+ buttin will send data to google',
+					'language' : 'en'
+				}
+			}
+		});});
+	</script>
 </div>
 <?php
 }

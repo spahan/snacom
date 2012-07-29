@@ -10,7 +10,9 @@
 
 .header { text-align: center; }
 .header div { padding: 2px 0; }
-.footer { font-size: x-small; }
+/* fix flattr button */
+.footer { font-size: x-small; padding-top:0px !important; }
+.footer iframe { position: relative; top: 6px; }
 
 .top10 { position:relative; width:100%; overflow:hidden;}
 .top10 > div { float:left; font-size:small; margin-right:10px; }
@@ -38,13 +40,5 @@
 #field { border-collapse:collapse; border-spacing:0; line-height:11px;}
 #field tr { margin:0; padding:0; }
 #field td { width:20px; height:20px; margin:0; padding:0; overflow:hidden;}
-
-#social { text-align: center; position:relative; height:20px;}
-#social > div { position: relative; float:left; overflow:hidden; max-width:20%;}
-#social .fb {-1px; margin-left:10px;}
-#social .twitter {}
-#social .flattr { margin-left:20px; }
-#social .google { margin-left:20px; }
-
 
 #faq div { font-weight:bold; }
