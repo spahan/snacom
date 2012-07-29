@@ -67,6 +67,13 @@ html_title('<div style="font-weight:bolder;">frequently answered questions</div>
 			</li>
         </ul>
     </div>
+	<script type="text/javascript">
+        function hideShow(e) {
+            $(this).next('dl').toggleClass('hidden');
+        }
+		$('#faq > li > div').click(hideShow);
+		$('#faq > li > dl').toggleClass('hidden');
+    </script>
 <?php
 html_foot();
 ?>
