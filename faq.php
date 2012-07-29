@@ -28,7 +28,7 @@ html_title('<div style="font-weight:bolder;">frequently answered questions</div>
                     <dt>How do I create a account?</dt>
                     <dd>Just fill in a username and password at the login prompt. If the user does not exist, you are asked if you want to create the account.</dd>
                     <dt>What Data is collected about me?</dt>
-                    <dd>The game itself stores your username, password, last 10 played fields, your best 10 fields, and any fields you have marked as "favorite". During the beta phase the apache access logging is turned on to make debugging easier.<br/> The website includes a social-bar at the bottom including various social network links. If you are concerned about your privacy, we suggest you use plugins like noScript or ABP. Self-protection is the only real privacy-protection which works on the internet.</dd>
+                    <dd>The game itself stores your username, password, last 10 played fields, your best 10 fields, and any fields you have marked as "favorite". During the beta phase the apache access logging is turned on to make debugging easier.<br/> The website includes a social-bar at the bottom including various social network links. We use the <a href="http://www.heise.de/ct/artikel/2-Klicks-fuer-mehr-Datenschutz-1333879.html">"2 clicks for privacy"-plugin developed by heise.de</a> for improved privacy.<br/>Finally, this site includes a <a href="https://flattr.com/">flattr button</a>.</dd>
                     <dt>What Data is collected about me if I don't use a account?</dt>
                     <dd> The game safes your current play field, and a temporary session. This session is deleted after 1 hour of inactivity. See above question for details about the social bar and apache setup.</dd>
                     <dt>where is my data stored?</dt>
@@ -56,7 +56,7 @@ html_title('<div style="font-weight:bolder;">frequently answered questions</div>
 					<dt>I use NoScript. What domains do i need whitelist to play?</dt>
 					<dd>Only snacom.ch is required to play. At registration recaptcha needs google.com</dd>
 					<dt>How can I hide my ass from you?</dt>
-					<dd>But I am sooo nice!!!... Well, just use TOR</dd>
+					<dd>But I am sooo nice!!!... Well, just use <a href="https://www.torproject.org/">Tor</a></dd>
 					<dt>I cracked the highscore, why am i not listed?</dt>
 					<dd>The high score is updated every 5 minutes. Just wait.</dd>
 					<dt>IT does not work nice on smartphones!</dt>
