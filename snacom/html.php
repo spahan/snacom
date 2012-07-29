@@ -7,6 +7,7 @@ function html_head($scripts) {
 <html>
 	<head>
 		<meta name="description" content="Snatch Commander is a browser based minesweeper game for booring hours" />
+		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="snacom.css">
 		<title>Snatch Commander 0.2 - a browser based minesweeper game</title>
 <?php
