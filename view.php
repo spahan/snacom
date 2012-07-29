@@ -27,7 +27,7 @@ if (!$user) {
 
 html_title('Games of <span style="font-weight:bolder">' . $uid . '</span>');
 echo '<div class="userdata"><table width="100%"><table width="100%"><tr><th>top10</th><th>recent</th><th>favs</th></th>';
-$game_data_format = '<td><a href="view.php?u=%s&g=%s">%s</a>%s</td>';
+$game_data_format = '<td><a href="view.php?u=%s&g=%s">%s</a>&nbsp;%s</td>';
 for ($i = 0; $i < 10; $i++) {
 	echo '<tr>';
 	if (isset($user['top10'][$i]))
