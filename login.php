@@ -33,9 +33,10 @@ if ($user) {
 		if (isset($guest['field'])) {
 			if (count($guest['field']) >= count($user['field'])) {
 				$user['field'] = $guest['field'];
+				$user['currentGameID'] = $guest['currentGameID'];
 			}
 		}
-	$_SESSION['uid'] = $uid;
+		$_SESSION['uid'] = $uid;
 		file_put_contents(USER_DATA_DIR . $uid, json_encode($user));
 		header('location: /');
 	} else {
