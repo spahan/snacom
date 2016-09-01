@@ -28,7 +28,7 @@ html_title('<div style="font-weight:bolder;">frequently answered questions</div>
                     <dt>How do I create a account?</dt>
                     <dd>Just fill in a username and password at the login prompt. If the user does not exist, you are asked if you want to create the account.</dd>
                     <dt>What Data is collected about me?</dt>
-                    <dd>The game itself stores your username, password, last 10 played fields, your best 10 fields, and any fields you have marked as "favorite". During the beta phase the apache access logging is turned on to make debugging easier.<br/> The website includes a social-bar at the bottom including various social network links. We use the <a href="http://www.heise.de/ct/artikel/2-Klicks-fuer-mehr-Datenschutz-1333879.html">"2 clicks for privacy"-plugin developed by heise.de</a> for improved privacy.<br/>Finally, this site includes a <a href="https://flattr.com/">flattr button</a>.</dd>
+                    <dd>The game itself stores your username, password, last 10 played fields, your best 10 fields, and any fields you have marked as "favorite". During the beta phase the apache access logging is turned on to make debugging easier.</dd>
                     <dt>What Data is collected about me if I don't use a account?</dt>
                     <dd> The game safes your current play field, and a temporary session. This session is deleted after 1 hour of inactivity. See above question for details about the social bar and apache setup.</dd>
                     <dt>where is my data stored?</dt>
