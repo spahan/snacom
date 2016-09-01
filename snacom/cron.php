@@ -40,6 +40,7 @@ while ($entry = $d->read()) {
 			$u = json_decode(file_get_contents(USER_DATA_DIR . $entry), true);
 			$total += $u['games_played'];
 			$s = 0;
+			#printf($u['top10']);
 			foreach ($u['top10'] as $i=>$v) {
 				if ($v['score'] > $s) $s = $v['score'];
 			}

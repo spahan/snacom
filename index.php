@@ -5,10 +5,8 @@ require_once('snacom/html.php');
 session_start();
 
 html_head(array(
-	'http://api.flattr.com/js/0.6/load.js?mode=auto' => true,
 	'md5.js' => true,
 	'jquery.js' => false,
-	'jquery.socialshareprivacy.min.js' => false,
 	'snacom.js' => false));
 html_title(<<<EOT
 <div style="font-weight:bolder;">Welcome to Snatch Commander.</div>
@@ -22,6 +20,7 @@ if (isset($_SESSION['uid'])) {
 	$uid = $_SESSION['uid'];
 	$user = getUserData($_SESSION['uid']);
 	if (!$user) {
+		header('location: /logout.php');
 		die('bad session');
 	}
 	if ($user['sid'] === session_id()) {
@@ -63,7 +62,6 @@ if (isset($_SESSION['uid'])) {
 </div>
 <?php
 file_put_contents(USER_DATA_DIR . $user['userID'], json_encode($user));
-html_social();
 html_foot();
 ?>
 <script> $(function() {
