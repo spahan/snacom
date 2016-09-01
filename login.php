@@ -46,7 +46,6 @@ if ($user) {
 } else { // no such user
 	// print out a user creation form.
 	html_head(array(
-		'http://api.flattr.com/js/0.6/load.js?mode=auto' => true,
 		'md5.js' => true,
 		'jquery.js' => false,
 		'snacom.js' => true));
