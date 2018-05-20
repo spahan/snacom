@@ -3,7 +3,7 @@ require_once('snacom/config.php');
 require_once('snacom/html.php');
 session_start();
 
-html_head(array('jquery.js' => false));
+html_head(array('js/jquery.js' => false));
 html_title('<div style="font-weight:bolder;">BLAST! You shiped into a mine!</div>');
 ?>
     <div class="header">

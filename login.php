@@ -46,9 +46,9 @@ if ($user) {
 } else { // no such user
   // print out a user creation form.
   html_head(array(
-    'md5.js' => true,
-    'jquery.js' => false,
-    'snacom.js' => true,
+    'js/md5.js' => true,
+    'js/jquery.js' => false,
+    'js/snacom.js' => true,
     'https://www.google.com/recaptcha/api.js' => true));
   html_title("No user <span style=\"font-weight:bold\">$uid</span> found. You may create it");
   html_create($uid);

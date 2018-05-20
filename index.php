@@ -5,9 +5,9 @@ require_once('snacom/html.php');
 session_start();
 
 html_head(array(
-	'md5.js' => true,
-	'jquery.js' => false,
-	'snacom.js' => false));
+	'js/md5.js' => true,
+	'js/jquery.js' => false,
+	'js/snacom.js' => false));
 html_title(<<<EOT
 <div style="font-weight:bolder;">Welcome to Snatch Commander.</div>
 <div>Some low level criminals have pestered the sea with mines. Your order is to safely guard a UN-medical convoy to innocent war victims.</div>

@@ -4,7 +4,7 @@ require_once('snacom/functions.php');
 require_once('snacom/html.php');
 session_start();
 
-html_head(array('jquery.js' => false));
+html_head(array('js/jquery.js' => false));
 echo '<div id="top10"><?php echo "top10"; ?></div></div>';
 $uid = strtolower(filter_input(INPUT_GET, 'u', FILTER_VALIDATE_REGEXP, $VALID_USER_FILTER));
 if (!$uid) {
