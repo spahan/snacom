@@ -91,12 +91,6 @@ function html_create($uid) {
 ?>
 <div class="usercreate">
 	<form method="POST" action="create.php" onsubmit="return this.hash.value = hex_md5(<?php echo APP_SALT;?> + this.hash.value + <?php echo APP_SALT;?>);" accept-charset=utf-8>
-		<div style="float:right">
-        <?php
-            require_once('snacom/recaptchalib.php');
-            echo recaptcha_get_html(RC_CLIENT_KEY);
-        ?>
-        </div>
 		<div title="Your name must be 6-20 chars long and can only contain a-z and 0-9">
 			<input name="uid" type="text" size="15" placeholder="username" value="<?php echo $uid;?>"/>
 			please choose a creative <span style="font-weight:bold">username</span>
@@ -106,6 +100,7 @@ function html_create($uid) {
 			do not reuse important<span style="font-weight:bold">passwords</span>
 		</div>
 		<input type="hidden" name="salt" value=""/>
+    <div class="g-recaptcha" data-sitekey="<?php echo RC_CLIENT_KEY; ?>"></div>
 		<input type="submit" name="send" value="createAccount"/>
 	</form>
 	<div style="clear:both">For details about how user data is handled please refere to the <a href="faq.php">FAQ</a>.</div>

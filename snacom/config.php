@@ -11,4 +11,5 @@ define('RC_SERVER_KEY', '6LfFLNMSAAAAABblamLRy1L5U78ZIbneIZt-PylH');
 
 $VALID_USER_FILTER = array('options' => array('regexp' => '/[a-zA-Z]{4}[a-zA-Z0-9]{0,12}/'));
 $VALID_HASH_FILTER = array('options' => array('regexp' => '/[a-f0-9]{32}/'));
+$VALID_RC_FILTER = array('options' => array('regexp' => '/[a-zA-Z0-9\-_]+/'));
 ?>
