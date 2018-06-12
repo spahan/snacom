@@ -1,4 +1,4 @@
-.wrapper { width:1201px; margin:auto;}
+.wrapper { width:440px; margin:auto;}
 .wrapper > div {
     margin:10px 0;
     border: solid medium #555555;
@@ -20,10 +20,8 @@
 .content { position:relative; }
 .content #login { font-size:small; }
 
-.userinfo { position:relative; font-size:small; height:1em;}
-.userinfo > div { width:19%; float:left; }
+.userinfo { font-size:small;}
 .userinfo span { font-weight:bold; }
-.userinfo form { position:relative; top: -0.5em; float:right;}
 
 .userdata { font-size:small;}
 .userdata th { width:33%; text-align:left }

@@ -27,9 +27,6 @@ function html_title($text) {
 			This site requires javascript. Please enable for this site.
 		</div>
 		<div class="header">
-			<div class="head">
-				<a href="/"><img src="img/head.png"/></a>
-			</div>
 			<div class="welcome"><?php echo $text;?></div>
 			<hr/>
 			<div class="top10">
