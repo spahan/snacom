@@ -65,7 +65,7 @@ file_put_contents(USER_DATA_DIR . $user['userID'], json_encode($user));
 html_foot();
 ?>
 <script> $(function() {
-	$('tr:first-child td:first-child')[0].firstChild.onclick();
-	$('tr:first-child td:last-child')[0].firstChild.onclick();
+	$('tr:first-child td:first-child')[0].firstChild.oncontextmenu();
+	$('tr:first-child td:last-child')[0].firstChild.oncontextmenu();
 });
 </script>

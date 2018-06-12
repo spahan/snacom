@@ -1,21 +1,21 @@
 function openNear(item) {
     var p = null;
-    if ( item.firstChild.src.match(/closed\.png/)) item.firstChild.onclick();
+    if ( item.firstChild.src.match(/closed\.png/)) item.firstChild.oncontextmenu();
     if ( p = item.previousSibling ) {
-        if ( p.firstChild.src.match(/closed\.png/)) { p.firstChild.onclick(); }
+        if ( p.firstChild.src.match(/closed\.png/)) { p.firstChild.oncontextmenu(); }
     }
     if ( p = item.nextSibling ) {
-        if ( p.firstChild.src.match(/closed\.png/)) { p.firstChild.onclick(); }
+        if ( p.firstChild.src.match(/closed\.png/)) { p.firstChild.oncontextmenu(); }
     }
 }
 // open fields around item (x is the vertical position)
 function openNeighbours(item) {
     var p = null, l = null, x = item.getAttribute('x');
     if ( p = item.previousSibling ) {
-        if ( p.firstChild.src.match(/closed\.png/)) { p.firstChild.onclick(); }
+        if ( p.firstChild.src.match(/closed\.png/)) { p.firstChild.oncontextmenu(); }
     }
     if ( p = item.nextSibling ) {
-        if ( p.firstChild.src.match(/closed\.png/)) { p.firstChild.onclick(); }
+        if ( p.firstChild.src.match(/closed\.png/)) { p.firstChild.oncontextmenu(); }
     }
     // open above if has a line
     if (l = item.parentNode.previousSibling ) {
@@ -69,19 +69,20 @@ function checkNeigbours(item) {
     }
 }
 function checkField(item) {
-    if (item.firstChild.src.match(/open\d\.png/)) {
-        checkNeigbours(item);
-        return;
-    }
-    if (item.firstChild.src.match(/flagged\.png/)) return;
-    if (item.firstChild.src.match(/opening\.png/)) return;
+    if (item.firstChild.src.match(/flagged\.png/)) return false;
+    if (item.firstChild.src.match(/opening\.png/)) return false;
     item.firstChild.src = "img/opening.png";
     $.ajax('snacom.php', { context: item, data: { x: item.getAttribute('x'), y: item.getAttribute('y'), cgid:$('#field')[0].getAttribute('gid') }, success: openField, dataType:'json' });
+    return false
 }
 
 
 function toggleFlag(item) {
-    if (item.firstChild.src.match(/open\d\.png/)) return;
+   if (item.firstChild.src.match(/open\d\.png/)) {
+        checkNeigbours(item);
+        return false;
+    }
+    if (item.firstChild.src.match(/open\d\.png/)) return false;
     $.get('snacom.php', { x: item.getAttribute('x'), y: item.getAttribute('y'), f: (item.firstChild.src.match(/flagged\.png/))?0:1, cgid:$('#field')[0].getAttribute('gid')});
     item.firstChild.src = (item.firstChild.src.match(/flagged\.png/))? "img/closed.png":"img/flagged.png";
     return false;
