@@ -1,4 +1,4 @@
-.wrapper { width:440px; margin:auto;}
+.wrapper { width:880px; margin:auto;}
 .wrapper > div {
     margin:10px 0;
     border: solid medium #555555;
@@ -34,10 +34,11 @@
 .fieldlist > ol { margin-bottom:0px; margin-top:5px;}
 .fieldlist li > span:first-child {font-weight:bold; padding-right:5px;}
 
-.scrollbar { overflow-y:scroll; overflow-x:visible; height:400px; clear:both;}
-#field { border-collapse:collapse; border-spacing:0; line-height:11px;}
+.scrollbar { overflow-y:scroll; overflow-x:visible; height:800px; clear:both;}
+#field { border-collapse:collapse; border-spacing:0; line-height:22px;}
 #field tr { margin:0; padding:0; }
-#field td { width:20px; height:20px; margin:0; padding:0; overflow:hidden;}
+#field td { width:40px; height:40px; margin:0; padding:0; overflow:hidden;}
+#field img { width: 100%; }
 
 #faq div { font-weight:bold; }
 #faq .hidden {display:none; }
