@@ -1,9 +1,9 @@
 <?php
 define('FIELD_DATA_DIR', './fields/');
 define('USER_DATA_DIR', './users/');
-define('FIELD_WIDTH', 58);
+define('FIELD_WIDTH', 20);
 define('FIELD_HEIGHT', 10);
-define('MINE_DENSITY', 25);
+define('MINE_DENSITY', 15);
 define('GUEST_RETENTION_TIME', 3600); // 1hour
 define('APP_SALT', 6247093);
 define('RC_CLIENT_KEY', '6LfFLNMSAAAAAMrq48_WYRuv-8YWL_PZbZIg3WDM');
