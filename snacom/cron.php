@@ -10,7 +10,7 @@ $d = dir(FIELD_DATA_DIR);
 $fu = null;
 $u = null;
 while ($entry = $d->read()) {
-	$f = split('#', $entry);
+	$f = explode('#', $entry);
 	if (count($f) == 2 ) {
 		if (file_exists(USER_DATA_DIR . $f[0])) {
 			$u = file_get_contents(USER_DATA_DIR . $f[0]);
