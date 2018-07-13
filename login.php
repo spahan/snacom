@@ -8,11 +8,8 @@ require_once('snacom/html.php');
 $uid = strtolower(filter_input(INPUT_POST, 'uid', FILTER_VALIDATE_REGEXP, $VALID_USER_FILTER));
 if (!$uid) { header('HTTP/1.1 400 Bad Request'); die(); }
 
-$salt = filter_input(INPUT_POST, 'salt', FILTER_VALIDATE_INT);
-if (!$salt) { header('HTTP/1.1 400 Bad Request'); die(); }
-
-$hash = filter_input(INPUT_POST, 'hash', FILTER_VALIDATE_REGEXP, $VALID_HASH_FILTER);
-if (!$hash) { header('HTTP/1.1 400 Bad Request'); die(); }
+$pass = filter_input(INPUT_POST, 'pass', FILTER_VALIDATE_REGEXP, $VALID_PASS_FILTER);
+if (!$pass) { header('HTTP/1.1 400 Bad Request'); die(); }
 
 session_start();
 // save old field data in case we want keep it.
@@ -24,10 +21,7 @@ session_destroy(); // destroy any old sessions.
 
 $user = getUserData($uid);
 if ($user) {
-  // We store the value md5(APP_SALT . password . APP_SALT).
-  // the provided hash is md5($salt . stored_data . $salt).
-  // the website needs calculate md5($salt . md5(APP_SALT . password . APP_SALT)) . $salt).
-  if ($hash === md5( $salt . $user['password'] . $salt)) {
+  if (password_verify($pass, $user['password'])) {
     session_start();
     $user['sid'] = session_id();
     if (isset($guest['field'])) {
