@@ -75,11 +75,9 @@ function html_player($player) {
 function html_login($data) {
 ?>
 <div class="userinfo">
-	<form method="POST" action="login.php" onSubmit="return this.hash.value = hex_md5(this.salt.value + hex_md5(<?php echo APP_SALT?> + this.hash.value + <?php echo APP_SALT?>) + this.salt.value);" accept-charset="utf-8";>
+	<form method="POST" action="login.php" accept-charset="utf-8";>
     	<input name="uid" type="text" size="10" title="Your name must be 6-20 chars long and can only contain a-z and 0-9" placeholder="username"/>
-    	<input name="hash" type="password" size="10" title="Your password must be 8-100 chars long; use special characters at own risk; some chars are forbidden" placeholder="password"/>
-    	<input type="hidden" name="salt" value=""/>
-    	<script>$("input[name=\'salt\']")[0].value = Math.ceil(Math.random()*50000);</script>
+    	<input name="pass" type="password" size="10" title="Your password must be 8-100 chars long; use special characters at own risk; some chars are forbidden" placeholder="password"/>
     	<input type="submit" name="send" value="login/createAccount"/>
 	</form>
 Welcome <span>guest player</span>. score <span id="score"><?php echo count($data['field']); ?></span>. To review games and participate in Top10 create a account:
@@ -90,16 +88,15 @@ Welcome <span>guest player</span>. score <span id="score"><?php echo count($data
 function html_create($uid) {
 ?>
 <div class="usercreate">
-	<form method="POST" action="create.php" onsubmit="return this.hash.value = hex_md5(<?php echo APP_SALT;?> + this.hash.value + <?php echo APP_SALT;?>);" accept-charset=utf-8>
+	<form method="POST" action="create.php" accept-charset=utf-8>
 		<div title="Your name must be 6-20 chars long and can only contain a-z and 0-9">
 			<input name="uid" type="text" size="15" placeholder="username" value="<?php echo $uid;?>"/>
 			please choose a creative <span style="font-weight:bold">username</span>
 		</div>
 		<div title="Your password must be 8-100 chars long; use special characters at own risk; some chars are forbidden">
-			<input name="hash" type="password" size="30" placeholder="password"/>
+			<input name="pass" type="password" size="30" placeholder="password"/>
 			do not reuse important<span style="font-weight:bold">passwords</span>
 		</div>
-		<input type="hidden" name="salt" value=""/>
     <div class="g-recaptcha" data-sitekey="<?php echo RC_CLIENT_KEY; ?>"></div>
 		<input type="submit" name="send" value="createAccount"/>
 	</form>

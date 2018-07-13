@@ -5,8 +5,8 @@ require_once('snacom/config.php');
 $uid = strtolower(filter_input(INPUT_POST, 'uid', FILTER_VALIDATE_REGEXP, $VALID_USER_FILTER));
 if (!$uid) { header('HTTP/1.1 400 Bad Request'); die(); }
 
-$hash = filter_input(INPUT_POST, 'hash', FILTER_VALIDATE_REGEXP, $VALID_HASH_FILTER);
-if (!$hash) { header('HTTP/1.1 400 Bad Request'); die(); }
+$pass = filter_input(INPUT_POST, 'pass', FILTER_VALIDATE_REGEXP, $VALID_PASS_FILTER);
+if (!$pass) { header('HTTP/1.1 400 Bad Request'); die(); }
 
 $rcd = filter_input(INPUT_POST, 'g-recaptcha-response', FILTER_VALIDATE_REGEXP, $VALID_RC_FILTER);
 if (!$rcd) { header('HTTP/1.1 400 Bad Request'); die(); }
@@ -34,7 +34,7 @@ $user = array(  'userID' => $uid, // hte users id, just in case.
                 'top10' => array(), // top 10 of this user
                 'last10' => array(), // recent 10 of this user
                 'favorites' => array(), // favorites for this user
-                'password' => $hash, // md5(APP_SALT . pw . APP_SALT
+                'password' => password_hash($pass, PASSWORD_BCRYPT), // hashed password
                 'games_played'  => 0, // game count
                 'sid' => session_id()); // current session id
 
