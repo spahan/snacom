@@ -48,7 +48,6 @@ function html_foot() {
 		<div class="footer">
 			miner@spahan.ch (C) by Hanspeter Spalinger 2012;
 			<a href="http://twitter.com/hasp">@hasp</a>
-			jabber:hanfi@jabber.ccc.de
 			<a href="http://blog.spahan.ch">my blog</a>
 			. see <a href="faq.php"> the faq</a> for more infos
 		</div>
