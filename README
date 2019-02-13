@@ -11,3 +11,5 @@ Get as far as you can at http://snacom.spahan.ch
 The game itself requires a webserver with php.
 Persisten user data is stored as json in plain files, so no Database is required.
 
+Just a test
+
